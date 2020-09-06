@@ -1,0 +1,227 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	max-width: 1024px;
+	margin: 0 auto;
+	font-family: verdana, sans-serif;
+	background-color: rgb(127,127,127);
+}
+h1 {
+	margin: 0 0 1em;
+	font-size: 24px;
+}
+h2 {
+	margin: 0 0 1em;
+	font-size: 20px;
+}
+p {
+	margin: 0 0 1em;
+	font-size: 18px;
+}
+.block {
+	float: left;
+	margin: 1em 2em 0 1em;
+}
+.form-item {
+	margin: 0 0 1em;
+}
+
+/*
+	palette
+*/
+#palette {
+	font-size: 0;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	border-radius: 3px;
+}
+#paletteOuter {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	     -o-user-select: none;
+	        user-select: none;
+}
+#palettehs, #palettel {
+	display: inline-block;
+	padding: 5px;
+	line-height: 0;
+	cursor: crosshair;
+}
+#palettel {
+	overflow: hidden;
+	width: 30px;	
+	padding-left: 0;
+	vertical-align: top;
+}
+#palettehs  div {
+	float: left;
+	width: 2px;
+	height: 2px;
+	padding-right: 0;
+}
+#palettel div {
+	height: 2px;
+}
+#cross {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	border: 1px solid rgba(255,255,255,0.7);
+	border-radius: 3px;
+	background-color: #000;
+}
+#pointer {
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	vertical-align: top;
+	width: 10px;
+	height: 0px;
+}
+#pointer:after {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 0;
+	width: 0;
+	margin-top: -5px;
+	border: solid transparent;
+	border-color: rgba(0, 0, 0, 0);
+	border-left-color: #000000;
+	border-width: 5px;
+}
+
+/*
+	preview
+*/
+#preview {
+	width: 70px;
+	height: 70px;
+	margin: 0 20px 1em 0;
+	padding: 7px;
+	background-color: #000;
+	border-radius: 7px;
+}
+#preview div {
+	display: table;
+	width: 100%;
+	height: 50%;
+}
+#preview div span {
+	display: table-cell; 
+	text-align: center;
+	vertical-align: middle; 
+	font-size: 15px;
+	color: rgba(0,0,0,0.3);
+	text-shadow: 1px 1px rgba(255, 255, 255, 0.3);
+}
+#newColor {
+	border-radius: 3px 3px 0 0;
+}
+#oldColor {
+	border-radius: 0 0 3px 3px;
+}
+#edit {
+	width: 400px;
+	height: 700px;
+	resize: none;
+	overflow: auto;
+	margin: 1em 0;
+	padding: 10px;
+	border: 0;
+	font: 1.5em "georgia", serif;
+	background: #ddd;
+	box-shadow: 0 0 10px rgba(50,50,50,0.9);
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+
+/*
+	form controls
+*/
+input[type=text] {
+	width: 150px;
+	padding: 3px;
+	border: 1px;
+	border-radius: 3px;
+	font: 14px consolas, monospace;
+	background: #ddd;
+	box-shadow: inset -1px -1px 2px rgba(0,0,0,0.5);
+}
+label {
+	background: #aaa;
+	padding: 0.2em 0.5em;
+	border-radius: 5px;
+}
+input[type="radio"] {
+	position: absolute;
+	padding: 10px;
+	background: #ddd;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 10px;
+	-webkit-appearance: none;
+} 
+input[type="radio"] + label {
+	margin-left: 30px;
+}
+input[type="radio"]:checked::before {
+	content: " ";
+	position: absolute;
+	top: 5px;
+	left: 5px;	
+	width: 10px;
+	height: 10px;
+	background-color: #333;
+	border-radius: 5px;
+}
+#hex {
+	text-transform: uppercase;
+}
+.slider {	
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 5px;
+	margin: 20px 0;
+	border: 0;
+	border-radius: 5px;
+	-webkit-appearance: none;
+	box-shadow: inset -1px -1px 1px rgba(255,255,255,0.5);
+}
+#rSlider {
+	background: -webkit-linear-gradient(left, rgb(0,0,0) 0, rgb(255,0,0) 100%);
+	background:    -moz-linear-gradient(left, rgb(0,0,0) 0, rgb(255,0,0) 100%);
+	background:     -ms-linear-gradient(left, rgb(0,0,0) 0, rgb(255,0,0) 100%);
+	background:      -o-linear-gradient(left, rgb(0,0,0) 0, rgb(255,0,0) 100%);
+	background:         linear-gradient(left, rgb(0,0,0) 0, rgb(255,0,0) 100%);
+}
+#gSlider {
+	background: -webkit-linear-gradient(left, rgb(0,0,0) 0, rgb(0,255,0) 100%);
+	background:    -moz-linear-gradient(left, rgb(0,0,0) 0, rgb(0,255,0) 100%);
+	background:     -ms-linear-gradient(left, rgb(0,0,0) 0, rgb(0,255,0) 100%);
+	background:      -o-linear-gradient(left, rgb(0,0,0) 0, rgb(0,255,0) 100%);
+	background:         linear-gradient(left, rgb(0,0,0) 0, rgb(0,255,0) 100%);
+}
+#bSlider {
+	background: -webkit-linear-gradient(left, rgb(0,0,0) 0, rgb(0,0,255) 100%);
+	background:    -moz-linear-gradient(left, rgb(0,0,0) 0, rgb(0,0,255) 100%);
+	background:     -ms-linear-gradient(left, rgb(0,0,0) 0, rgb(0,0,255) 100%);
+	background:      -o-linear-gradient(left, rgb(0,0,0) 0, rgb(0,0,255) 100%);
+	background:         linear-gradient(left, rgb(0,0,0) 0, rgb(0,0,255) 100%);
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	position: relative;
+	z-index: 1;
+	width: 10px;
+	height: 15px;
+	border-radius: 3px;
+	border: 1px solid rgba(255,255,255,0.7);
+	background: rgba(0,0,0,0.7);	
+}

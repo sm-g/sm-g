@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Палитра</title>
+    <link rel="stylesheet" href="main.css" charset="utf-8" />
+    <script src="palette.js"></script>
+  </head>
+  <body onload="detectElements(); createHslColorPalette(2, 2, 1)">
+    <section id="paletteOuter" class="block">
+      <h1>Палитра</h1>
+      <div id="palette" class="block">
+        <div id="cross" onmousedown="crossDown(event)"></div>
+        <div id="palettehs" onmousedown="mouseDown(event)" onmouseup="mouseUp(event)" onmouseover="mouseOver(event)" onmouseout="mouseOut(event)" onclick="setColor()"></div>
+        <div id="pointer"></div>
+        <div id="palettel" onmousedown="mouseDown(event)" onmouseup="mouseUp(event)" onmouseover="mouseOver(event)" onmouseout="mouseOut(event)" onmousemove="redrawColorPointer(event)" onclick="setColor(event)"></div>
+      </div>
+      <div class="block"> 
+        <div id="preview">
+          <div id="newColor"><span>new</span></div>
+          <div id="oldColor"><span>old</span></div>        
+        </div>
+        <div id="values">
+          <div class="form-item">
+            <input id="hex" type="text" />
+          </div>
+          <div class="form-item">
+            <input id="rgbValue" type="text" />
+          </div>
+          <div class="form-item">
+            <input class="slider" id="rSlider" type="range" min="0" max="255" onchange="sliderPreview(event)" onmouseup="setColor()" onblur="setColor()"/>
+            <input class="slider" id="gSlider" type="range" min="0" max="255" onchange="sliderPreview(event)" onmouseup="setColor()" onblur="setColor()"/>
+            <input class="slider" id="bSlider" type="range" min="0" max="255" onchange="sliderPreview(event)" onmouseup="setColor()" onblur="setColor()"/>
+          </div>        
+        </div>
+      </div>
+    </section>
+    <section class="block">
+      <h1>Просмотр</h1>
+      <form id="controls">
+        <h2>Меняем</h2>
+        <div class="form-item">          
+          <input type="radio" name="colorradio" id="color" checked="checked" onclick="handleRadioChange()" /><label for="color">текст</label>
+        </div>
+        <div class="form-item">
+          <input type="radio" name="colorradio" id="backgroundColor" onclick="handleRadioChange()" /><label for="backgroundColor">фон</label>
+        </div>        
+      </form> 
+      <textarea id="edit" spellcheck="false">Либерализм означает институциональный тоталитарный тип политической культуры (терминология М.Фуко). Элемент политического процесса интегрирует марксизм, отмечает автор, цитируя К.Маркса и Ф.Энгельса. Коммунизм определяет эмпирический коммунизм, исчерпывающее исследование чего дал М.Кастельс в труде „Информационная эпоха“. Коммунизм теоретически возможен. Исходя из данного утверждения, христианско-демократический национализм определяет коллапс Советского Союза, впрочем, не все политологи разделяют это мнение. Политическая коммуникация очевидна не для всех.</textarea>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+/* keyframes */
+@-webkit-keyframes highlight {
+	0%  { background-color: #fffeef; }
+	100% { background-color: transparent; }
+}
+@-moz-keyframes highlight {
+	0%  { background-color: #fffeef; }
+	100% { background-color: transparent; }
+}
+@-o-keyframes highlight {
+	0%  { background-color: #fffeef; }
+	100% { background-color: transparent; }
+}
+@keyframes highlight {
+	0%  { background-color: #fffeef; }
+	100% { background-color: transparent; }
+}
+
+.content > p[id]:target {
+	-webkit-animation: highlight 5s;
+	   -moz-animation: highlight 5s;	
+	     -o-animation: highlight 5s;
+	        animation: highlight 5s;
+}

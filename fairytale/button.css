@@ -1,0 +1,20 @@
+.button {
+	position: relative;
+	display: inline-block;
+	background-color: #fee;
+	padding: 10px;
+	margin-bottom: 4px;
+	text-decoration: none;
+	box-shadow: 5px 4px 1px #D94;
+	-webkit-transition: all 0.1s ease;
+	   -moz-transition: all 0.1s ease;
+	     -o-transition: all 0.1s ease;
+	        transition: all 0.1s ease;
+	
+}
+.button:active, .button.sensor:hover {
+	background-color: #fcc;
+	box-shadow: 3px 2px 1px #D94;	
+	top: 1px;
+	left: 2px;
+}
